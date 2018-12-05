@@ -1,9 +1,15 @@
 import os, os.path
 import re
 import numpy as np
+import argparse
+
+parser = argparse.ArgumentParser(description='Print a random stanza of Gestathattr.')
+parser.add_argument('-norse', nargs='+')
 a = os.getcwd()
 pattern = re.compile('\d')
-file = a + '/Gestathattr.txt'
+norfile = a + '/Gestathattr.txt'
+engfile = a + '/GestathattrEnglish.txt'
+
 linenumber = []
 with open(file) as opfile:
 	for num, line in list(enumerate(opfile,1)):
